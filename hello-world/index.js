@@ -1,10 +1,14 @@
 'use strict';
 exports.handler = (event, context, callback) => {
     const name = event.pathParameters.name || 'world';
-    return callback(null, {
+    const response = {
         statusCode: 200,
+        headers: {
+            'Cache-Control': 'no-cache'
+        },
         body: JSON.stringify({
-            message: `Hello ${world}`
+            message: `Hello ${name}`
         })
-    });
+    };
+    return callback(null, response);
 };
