@@ -1,4 +1,5 @@
 'use strict';
+
 exports.handler = (event, context, callback) => {
     const name = event.pathParameters.name || 'world';
     const response = {
@@ -12,3 +13,11 @@ exports.handler = (event, context, callback) => {
     };
     return callback(null, response);
 };
+
+if (require.main === module) {
+    const event = { pathParameters: { name: "orbis" } };
+    exports.handler(event, {}, (error, result) => {
+        if (error) console.log(error)
+        else console.log(result);
+    });
+}
