@@ -17,7 +17,7 @@ exports.handler = (event, context, callback) => {
 if (require.main === module) {
     const event = { pathParameters: { name: "orbis" } };
     exports.handler(event, {}, (error, result) => {
-        if (error) console.log(error)
+        if (error) console.log(error);
         else console.log(result);
     });
 }
