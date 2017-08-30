@@ -1,6 +1,6 @@
-const eventParser = require('your-event-parser');
-const responseWrapper = require('response-wrapper');
 const businessLogic = require('business-logic');
+const eventParser = require('event-parser');
+const responseWrapper = require('response-wrapper');
 
 
 exports.handler = (event, context, callback) => {
